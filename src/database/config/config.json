@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "sa",
+    "password": "Transformacion22#",
+    "database": "changarrito",
+    "host": "172.20.176.236",
+    "dialect": "mssql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mssql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mssql"
+  }
+}
