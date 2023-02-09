@@ -359,7 +359,7 @@ export default function Login() {
                     </Form.Group>
                     {/* fin de este input */}
                 </Row>
-                <Button className="titne mb-5 boton" variant='primary' type="submit">
+                <Button className="titne mb-5 boton" variant='primary' type="submit" onClick={e =>setEnviare(true)}>
                     Entrar
                 </Button>
             </Form>
