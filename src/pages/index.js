@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { FaHamburger } from "react-icons/fa";
@@ -10,9 +9,6 @@ import { Stack } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import { AiOutlineStar } from 'react-icons/ai';
 import { AiFillStar } from 'react-icons/ai';
-import { AiOutlineShoppingCart } from 'react-icons/ai';
-import { IoAddOutline } from 'react-icons/io5';
-import { IoTrashOutline } from 'react-icons/io5';
 import { IconContext } from 'react-icons/lib';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';

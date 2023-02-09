@@ -5,6 +5,7 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const process = require('process');
 const product = require('./product');
+const user = require('./user');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
@@ -33,6 +34,7 @@ fs
   });
 */
 db.Product = product(sequelize, Sequelize.DataTypes);
+db.User = user(sequelize, Sequelize.DataTypes);
 
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
