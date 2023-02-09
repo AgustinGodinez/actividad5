@@ -22,7 +22,7 @@ export default function Login() {
     const [enviare, setEnviare] = useState(false)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
- 
+
 
     const getUsuarioForm = (data) => {
         console.log(data);
@@ -38,13 +38,14 @@ export default function Login() {
                     <Form.Group as={Col} >
                         {errors.nombre?.type === 'required' && <span style={{ color: 'red' }}>El campo nombre es requerido</span>}
                         {errors.nombre?.type === 'pattern' && <span style={{ color: 'red' }}>El campo nombre no es valido</span>}
-
+                        {errors.apellidos?.type === 'minLength' && <span style={{ color: 'red' }}>El campo nombre es de minimo 3 letras</span>}
+                        {errors.apellidos?.type === 'maxLength' && <span style={{ color: 'red' }}>El campo nombre es de maximo 62 letras</span>}
                         <InputGroup className="mb-5  borderline" >
 
                             <InputGroup.Text id="basic-addon1" >
                                 <IconContext.Provider value={{ size: '25px' }}>
                                     <HiUserCircle />
-                                    {(!enviare == true) ? '' : (
+                                    {(!enviare === true) ? '' : (
                                         errors.nombre ?
                                             <IconContext.Provider value={{ size: '26px', color: 'red' }}>
                                                 <MdOutlineCancel />
@@ -73,6 +74,8 @@ export default function Login() {
                         {errors.apellidos?.type === 'required' && <span style={{ color: 'red' }}>El campo apellidos es requerido</span>}
                         {errors.apellidos?.type === 'minLength' && <span style={{ color: 'red' }}>El campo apellidos es de minimo 3 letras</span>}
                         {errors.apellidos?.type === 'maxLength' && <span style={{ color: 'red' }}>El campo apellidos es de maximo 62 letras</span>}
+                        {errors.nombre?.type === 'pattern' && <span style={{ color: 'red' }}>El campo apellidos no es valido</span>}
+
                         <InputGroup className="mb-5  borderline" >
                             <InputGroup.Text id="basic-addon1" >
                                 <IconContext.Provider value={{ size: '25px' }}>
@@ -152,7 +155,7 @@ export default function Login() {
                                     }
                                 </IconContext.Provider>
                             </InputGroup.Text>
-                            <Form.Control className="text-center  labelformme" type='email' {...register("email", {
+                            <Form.Control className="text-center  labelformme"  {...register("email", {
                                 required: true,
                                 pattern: /^[a-z0-9_\-]+(\.[_a-z0-9\-]+)*@([_a-z0-9\-]+\.)+([a-z]{2}|aero|asia|arpa|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|xxx)$/,
                             })} placeholder="Email"></Form.Control>
@@ -359,7 +362,7 @@ export default function Login() {
                     </Form.Group>
                     {/* fin de este input */}
                 </Row>
-                <Button className="titne mb-5 boton" variant='primary' type="submit">
+                <Button className="titne mb-5 boton" variant='primary' type="submit" onClick={e => setEnviare(true)}>
                     Entrar
                 </Button>
             </Form>
